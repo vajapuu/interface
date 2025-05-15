@@ -21,19 +21,22 @@ export default function LoginPage() {
   }
 
   return (
-    <div>
-      <h1>Login</h1>
+    <div className="flex h-screen">
+    <div className="m-auto">
+      <h1 className="text-2xl font-bold">Login</h1>
       {error && <p style={{ color: "red" }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <input
+          className="border"
           type="email"
           placeholder="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          required
-        />
+          required autoFocus
+          />
         <br />
         <input
+          className="border"
           type="password"
           placeholder="password"
           value={password}
@@ -41,8 +44,11 @@ export default function LoginPage() {
           required
         />
         <br />
-        <button type="submit">Login</button>
+        <button
+          className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+          type="submit">Login</button>
       </form>
+    </div>
     </div>
   );
 }

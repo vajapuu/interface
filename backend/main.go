@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	http.Handle("/", RequireAuth(http.HandlerFunc(HomeHandler)))
 	http.HandleFunc("/register", RegisterHandler)
 	http.HandleFunc("/login", LoginHandler)
 	http.HandleFunc("/logout", LogoutHandler)

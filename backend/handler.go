@@ -106,3 +106,7 @@ func LogoutHandler(w http.ResponseWriter, r *http.Request) {
 	})
 	w.Write([]byte("Logged out"))
 }
+
+func HomeHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Welcome, authenticated user!"))
+}
